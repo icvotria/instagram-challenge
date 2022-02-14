@@ -4,6 +4,17 @@ Instagram Challenge
 ## Challenge
 
 This is the week 8 Makers weekend challenge. The challenge is to make a clone of Instagram.
+
+## To use
+
+Clone this repo then run
+
+` $ bundle install `
+
+` $ rails server `
+
+
+then go to localhost:3000 in your favourite browser
  
 ## Achieved
 
