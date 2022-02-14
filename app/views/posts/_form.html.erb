@@ -1,0 +1,10 @@
+<div class='form-wrapper'>
+  <%= form_for @post do |form| %>
+    <%= form.label :caption %><br>
+    <%= form.text_field :caption %><br>
+    <%= form.label :image %>
+    <%= form.file_field :image %><br>
+    <%= form.submit "Submit" %>
+    <%= form.hidden_field :username, :value => session[:username] %>
+  <% end %>
+</div>

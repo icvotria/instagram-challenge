@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+    <title>InstaBAM</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <nav class="navbar-container">
+      <%= link_to posts_path do %>
+        <div class='nav-header'>
+        InstaBAM!!!
+        </div>
+      <% end %>
+      <div class='link'>
+        <% if session[:username] %>
+          Hi, <%= session[:username] %>!! ~  
+          <%= link_to new_post_path do %>
+            New post! 
+          <% end %>
+           ~ 
+          <%= link_to logout_path do %>
+              Log out!
+          <% end %>
+        <% else %>
+          <%= link_to new_user_path do %>
+              Sign up!
+          <% end %>
+          <%= link_to login_path do %>
+              Log in!
+          <% end %>
+        <% end %>
+      </div>
+    </nav>
+  </head>
+
+  <body>
+    <% flash.each do |type, msg| %>
+      <div class='flash'>
+        <%= msg %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

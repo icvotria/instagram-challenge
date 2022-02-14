@@ -1,0 +1,19 @@
+<div class='header'>
+  Edit your post!!
+</div>
+<div class='posts-wrapper'>
+  <div class='post'>
+    <div class='image'>
+      <%= image_tag @post.image.variant(resize_to_limit: [700, nil]) %>
+    </div>
+    <div class='caption'>
+      <%= @post.caption %>
+    </div>
+  </div>
+</div>
+<%# <div class='link'>
+  <%= link_to destroy_post_path(@post), method: :delete, data: {confirm: "You sure??!" } do %>
+  <%# Delete your lovely post!!
+  <% end %>
+<%# </div> %>
+<%= render "form", post: @post %>
