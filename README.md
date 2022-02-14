@@ -28,6 +28,7 @@ then go to localhost:3000 in your favourite browser
 ## To do
 
 - Tests!!
+- Make the storage work properly - atm it's not pushing to the aws bucket
 - Liking posts
 - Commenting on posts
 - I want to get it going on Heroku
